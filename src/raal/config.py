@@ -10,7 +10,6 @@ class RuntimeConfig:
 
     agent_name: str
     max_steps: int
-    log_level: str
 
 
 def _read_int(name: str, default: int, minimum: int, maximum: int) -> int:
@@ -27,5 +26,4 @@ def _read_int(name: str, default: int, minimum: int, maximum: int) -> int:
 def load_config() -> RuntimeConfig:
     agent_name = (os.getenv("RAAL_AGENT_NAME") or "raal-sim-agent").strip() or "raal-sim-agent"
     max_steps = _read_int("RAAL_MAX_STEPS", default=6, minimum=3, maximum=20)
-    log_level = (os.getenv("RAAL_LOG_LEVEL") or "INFO").strip().upper() or "INFO"
-    return RuntimeConfig(agent_name=agent_name, max_steps=max_steps, log_level=log_level)
+    return RuntimeConfig(agent_name=agent_name, max_steps=max_steps)
