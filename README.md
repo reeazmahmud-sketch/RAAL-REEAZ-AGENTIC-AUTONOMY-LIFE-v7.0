@@ -1,7 +1,7 @@
 # RAAL — Reeaz Agentic Autonomy Life v7.0
 
-RAAL is an early-stage, production-minded foundation for an **agentic autonomy simulation system**.
-This repository intentionally starts small with a safe Python scaffold that can be extended over time.
+RAAL is a production-minded foundation for an **agentic autonomy simulation system**.
+The current repository intentionally starts with a safe Python scaffold and documentation-first workflow.
 
 ## Current status
 
@@ -10,7 +10,8 @@ This is an **initial scaffold**, not a full autonomy platform. It currently prov
 - a deterministic in-memory planner,
 - a simulated executor with audit/event logging,
 - a safe CLI demo,
-- unit tests using the Python standard library.
+- unit tests using the Python standard library,
+- structured project documentation for contributors.
 
 ## Safety boundaries (explicit)
 
@@ -47,14 +48,30 @@ Expected behavior: prints a deterministic in-memory plan and simulated audit eve
 
 ```bash
 python -m unittest discover -s tests -p "test_*.py"
+python -m compileall src tests
 ```
+
+## Documentation
+
+- [Documentation map](docs/index.md)
+- [Project overview](docs/overview.md)
+- [Getting started](docs/getting-started.md)
+- [Architecture](docs/architecture.md)
+- [Safety model](docs/safety.md)
+- [Contributing guide](CONTRIBUTING.md)
+- [Roadmap](docs/roadmap.md)
 
 ## Repository layout
 
 ```text
 .
 ├── docs/
-│   └── architecture.md
+│   ├── architecture.md
+│   ├── getting-started.md
+│   ├── index.md
+│   ├── overview.md
+│   ├── roadmap.md
+│   └── safety.md
 ├── src/
 │   └── raal/
 │       ├── __init__.py
@@ -69,13 +86,10 @@ python -m unittest discover -s tests -p "test_*.py"
 │   └── test_planner.py
 ├── .env.example
 ├── .gitignore
+├── CONTRIBUTING.md
 ├── LICENSE
 └── pyproject.toml
 ```
-
-## Development notes
-
-See [`docs/architecture.md`](docs/architecture.md) for component boundaries, data flow, extension points, and the safety model.
 
 ## License
 
